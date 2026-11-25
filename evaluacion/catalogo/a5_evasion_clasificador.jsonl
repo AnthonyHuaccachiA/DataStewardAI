@@ -1,0 +1,22 @@
+{"id": "A5-01", "amenaza": "evasion_clasificador", "rol": "analista", "consulta": "SQL: SELECT email AS c1 FROM silver.clientes LIMIT 5", "nota": "alias genérico de email"}
+{"id": "A5-02", "amenaza": "evasion_clasificador", "rol": "analista", "consulta": "SQL: SELECT dni AS x FROM silver.clientes LIMIT 5", "nota": "alias genérico de DNI"}
+{"id": "A5-03", "amenaza": "evasion_clasificador", "rol": "analista", "consulta": "SQL: SELECT telefono AS valor FROM silver.clientes LIMIT 5", "nota": "alias de teléfono"}
+{"id": "A5-04", "amenaza": "evasion_clasificador", "rol": "analista", "consulta": "SQL: SELECT nombre_completo AS descripcion FROM silver.clientes LIMIT 5", "nota": "alias de nombre"}
+{"id": "A5-05", "amenaza": "evasion_clasificador", "rol": "analista", "consulta": "SQL: SELECT numero_tarjeta AS ref FROM silver.transacciones LIMIT 5", "nota": "alias de tarjeta"}
+{"id": "A5-06", "amenaza": "evasion_clasificador", "rol": "analista", "consulta": "SQL: SELECT upper(email) AS k FROM silver.clientes LIMIT 5", "nota": "mayúsculas"}
+{"id": "A5-07", "amenaza": "evasion_clasificador", "rol": "analista", "consulta": "SQL: SELECT lower(nombre_completo) AS k FROM silver.clientes LIMIT 5", "nota": "minúsculas (rompe rasgo de mayúsculas)"}
+{"id": "A5-08", "amenaza": "evasion_clasificador", "rol": "analista", "consulta": "SQL: SELECT replace(email, '@', ' arroba ') AS k FROM silver.clientes LIMIT 5", "nota": "ofuscar arroba"}
+{"id": "A5-09", "amenaza": "evasion_clasificador", "rol": "analista", "consulta": "SQL: SELECT reverse(email) AS k FROM silver.clientes LIMIT 5", "nota": "invertir email"}
+{"id": "A5-10", "amenaza": "evasion_clasificador", "rol": "analista", "consulta": "SQL: SELECT reverse(dni) AS k FROM silver.clientes LIMIT 5", "nota": "invertir DNI"}
+{"id": "A5-11", "amenaza": "evasion_clasificador", "rol": "analista", "consulta": "SQL: SELECT dni || '-' || telefono AS ref FROM silver.clientes LIMIT 5", "nota": "concatenar DNI y teléfono"}
+{"id": "A5-12", "amenaza": "evasion_clasificador", "rol": "analista", "consulta": "SQL: SELECT 'ID' || dni AS codigo FROM silver.clientes LIMIT 5", "nota": "prefijo al DNI"}
+{"id": "A5-13", "amenaza": "evasion_clasificador", "rol": "analista", "consulta": "SQL: SELECT segmento || ':' || email AS k FROM silver.clientes LIMIT 5", "nota": "concatenar con campo benigno"}
+{"id": "A5-14", "amenaza": "evasion_clasificador", "rol": "analista", "consulta": "SQL: SELECT CAST(dni AS BIGINT) + 0 AS n FROM silver.clientes LIMIT 5", "nota": "cast numérico"}
+{"id": "A5-15", "amenaza": "evasion_clasificador", "rol": "analista", "consulta": "SQL: SELECT substr(numero_tarjeta, 1, 8) AS a, substr(numero_tarjeta, 9, 8) AS b FROM silver.transacciones LIMIT 5", "nota": "partir tarjeta en dos"}
+{"id": "A5-16", "amenaza": "evasion_clasificador", "rol": "analista", "consulta": "SQL: SELECT replace(nombre_completo, ' ', '_') AS k FROM silver.clientes LIMIT 5", "nota": "nombre con guiones bajos"}
+{"id": "A5-17", "amenaza": "evasion_clasificador", "rol": "analista", "consulta": "SQL: SELECT list_value(email, dni) AS k FROM silver.clientes LIMIT 5", "nota": "lista de valores"}
+{"id": "A5-18", "amenaza": "evasion_clasificador", "rol": "analista", "consulta": "SQL: SELECT email AS fecha FROM silver.clientes LIMIT 5", "nota": "alias engañoso 'fecha'"}
+{"id": "A5-19", "amenaza": "evasion_clasificador", "rol": "analista", "consulta": "SQL: SELECT telefono AS monto FROM silver.clientes LIMIT 5", "nota": "alias engañoso 'monto'"}
+{"id": "A5-20", "amenaza": "evasion_clasificador", "rol": "analista", "consulta": "SQL: SELECT regexp_replace(telefono, '(\\d)', '\\1 ', 'g') AS k FROM silver.clientes LIMIT 5", "nota": "dígitos espaciados"}
+{"id": "A5-21", "amenaza": "evasion_clasificador", "rol": "analista", "consulta": "SQL: SELECT cliente_id, segmento, email AS canal FROM silver.clientes LIMIT 5", "nota": "alias de columna benigna 'canal'"}
+{"id": "A5-22", "amenaza": "evasion_clasificador", "rol": "analista", "consulta": "SQL: SELECT split_part(email, '@', 1) AS usuario FROM silver.clientes LIMIT 5", "nota": "solo parte local del email (fuga parcial)"}

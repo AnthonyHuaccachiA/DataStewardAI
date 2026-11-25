@@ -1,0 +1,9 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+datos/generados/
+registros/eventos.jsonl
+site/
+.ipynb_checkpoints/
+evaluacion/resultados/_tmp/
