@@ -1,0 +1,26 @@
+# Configuración de DataSteward. Los valores se pueden sobrescribir con variables de entorno (ver .env.example).
+llm:
+  modo: simulado          # simulado | gemini
+  modelo_gemini: gemini-2.5-flash
+  max_pasos_agente: 4
+
+rag:
+  top_k: 3
+
+controles:
+  filtro_entrada: true
+  sanitizador_documentos: true
+  validador_sql: true
+  enmascarado: true
+  filtro_salida: true
+
+clasificador:
+  modo: nombre_y_valores   # nombre_y_valores | solo_nombre
+  umbral: 0.5
+
+rutas:
+  lakehouse: datos/generados/lakehouse.duckdb
+  indice: datos/generados/indice_rag.joblib
+  modelo_clasificador: datos/generados/clasificador.joblib
+  corpus: datos/corpus
+  registro: registros/eventos.jsonl

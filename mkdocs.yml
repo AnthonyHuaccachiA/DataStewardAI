@@ -1,0 +1,40 @@
+site_name: DataSteward · Ciberseguridad de IA
+site_description: Asistente de gobierno de datos atacado y defendido (trabajo integrador, UNI)
+site_url: https://anthonyhuaccachia.github.io/DataStewardAI/
+repo_url: https://github.com/AnthonyHuaccachiA/DataStewardAI
+repo_name: DataStewardAI
+docs_dir: docs
+theme:
+  name: material
+  language: es
+  palette:
+    - scheme: default
+      primary: indigo
+      toggle: {icon: material/brightness-7, name: Modo oscuro}
+    - scheme: slate
+      primary: indigo
+      toggle: {icon: material/brightness-4, name: Modo claro}
+  features:
+    - navigation.sections
+    - content.code.copy
+    - search.highlight
+nav:
+  - Inicio: index.md
+  - 1. Ficha del sistema: ficha.md
+  - 2. Arquitectura: arquitectura.md
+  - 3. Modelo de amenazas: modelo-de-amenazas.md
+  - 4. Priorización: priorizacion.md
+  - 5. Controles y riesgo residual: controles.md
+  - 6. Evaluación adversarial: evaluacion.md
+  - 7. Clasificación regulatoria: regulatorio.md
+  - Reproducir y demostrar: reproducir.md
+markdown_extensions:
+  - admonition
+  - tables
+  - attr_list
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
